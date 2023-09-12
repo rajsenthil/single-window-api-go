@@ -26,15 +26,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-	var prod = new(Product)
+	// var prod = new(Product)
+	var v interface{}
 
-	if err := json.Unmarshal(data, &prod); err != nil {
+	if err := json.Unmarshal(data, &v); err != nil {
 		log.Fatal(err)
 	}
 
-	log.Printf("Prod: %v", prod)
-	fmt.Printf("Prod: %v", prod)
-	if err = sch.ValidateInterface(prod); err != nil {
-		log.Fatalf("Error %v", err)
+	log.Printf("Prod1: %v", v)
+	fmt.Printf("Prod2: %v", v)
+	if err = sch.ValidateInterface(v); err != nil {
+		log.Fatalf("Validation Error %v", err)
 	}
+	fmt.Printf("Prod3: %v", v)
 }
