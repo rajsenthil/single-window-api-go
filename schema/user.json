@@ -1,0 +1,9 @@
+{
+  "id": 0,
+  "name": "ABCDEFGHIJKLMNOPQRSTU",
+  "friends": [0, 0, 0, 0, 0],
+  "tags": {},
+  "birth_date": "2006-01-02T15:04:05Z",
+  "metadata": "meta01",
+  "fav_color": "red"
+}
