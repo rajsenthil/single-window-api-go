@@ -1,17 +1,27 @@
 {
-  "type": "object",
-  "properties": {
-    "productName": {
-      "type": "string"
-    },
-    "upcCode": {
-      "type": "string",
-      "minLength": 12,
-      "maxLength": 12
-    },
-    "attr01": {
-      "type": "string"
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/Product",
+  "$defs": {
+    "Product": {
+      "properties": {
+        "productName": {
+          "type": "string"
+        },
+        "upcCode": {
+          "type": "string",
+          "maxLength": 12,
+          "minLength": 12,
+          "title": "Upc Code",
+          "description": "Upc code",
+          "examples": ["123456789012"]
+        },
+        "attr01": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["productName", "upcCode", "attr01"]
     }
-  },
-  "required": ["productName", "upcCode", "attr01"]
+  }
 }
