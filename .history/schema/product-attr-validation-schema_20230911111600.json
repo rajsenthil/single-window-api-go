@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "productName": {
+      "type": "string"
+    },
+    "upcCode": {
+      "type": "string",
+      "minLength": 12,
+      "maxLength": 12
+    },
+    "attr01": {
+      "type": "string"
+    }
+  },
+  "required": ["firstName", "lastName", "attr01"]
+}
