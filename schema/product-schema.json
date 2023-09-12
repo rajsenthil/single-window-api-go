@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/Product",
+  "$defs": {
+    "Product": {
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "productType": {
+          "type": "string",
+          "enum": [
+            "Simple",
+            "Configurable",
+            "Grouped",
+            "Virtual",
+            "Bundle"
+          ],
+          "maxLength": 20,
+          "minLength": 1,
+          "title": "product type",
+          "description": "product type",
+          "default": "Simple",
+          "examples": [
+            "Bundle",
+            "Configurable"
+          ]
+        },
+        "product_date": {
+          "type": "string",
+          "format": "date-time",
+          "message": {
+            "required": "Product date is required",
+            "pattern": "Correct format of Product Date Of Birth is yyyy-mm-ddTHH:MM:SSZ as in 2006-01-02T15:04:05Z"
+          }
+        },
+        "productPrice": {
+          "$ref": "#/$defs/ProductPrice"
+        },
+        "tags": {
+          "type": "object",
+          "a": "b",
+          "foo": [
+            "bar",
+            "bar1"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "id",
+        "productType",
+        "product_date",
+        "productPrice"
+      ]
+    },
+    "ProductPrice": {
+      "properties": {
+        "regularPrice": {
+          "type": "number"
+        },
+        "markedPrice": {
+          "type": "number"
+        },
+        "discount": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "regularPrice",
+        "markedPrice"
+      ]
+    }
+  }
+}
